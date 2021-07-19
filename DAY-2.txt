@@ -1,0 +1,79 @@
+DAY-2 COOPER TRAINING
+
+1).Obtain the domain name from the url
+
+Obtain the domain name from the url
+
+Input Format
+
+The input will be a string. For Eg: 'https://www.youtube.com'
+
+Constraints
+
+none
+
+Output Format
+
+The Output format should be in string. For Eg: youtube.com
+
+Sample Input 0
+
+http://www.google.com
+Sample Output 0
+
+google.com
+
+
+SOLUTION: 
+
+s=input()
+l=[]
+for i in range(len(s)):
+  a=s[i]
+  if a==".":
+    l.append(i)
+first_ind=l[0]
+print(s[first_ind+1:])
+_____________________________________________________
+2).To make a full url from a string
+To make a full url from a given string
+
+Input Format
+
+The input will be as a string.
+
+Constraints
+
+none
+
+Output Format
+
+The output will be as a url format.
+
+Sample Input 0
+
+www#hackkerrank#com#domains#python
+Sample Output 0
+
+https://www.hackkerrank.com/domains/python/
+Sample Input 1
+
+www#youtube#com#watch#python-tutorial
+Sample Output 1
+
+https://www.youtube.com/watch/python-tutorial/
+
+
+SOLUTION: 
+
+String=input()
+split_list=String.split("#")
+for i in range(len(split_list)):
+    a=split_list[i]
+    if a=="com":
+       list2=split_list[i+1:]
+       list1=split_list[:i+1]
+S1=".".join(list1)
+S2="/".join(list2)
+S="https://"+S1+"/"+S2+"/"
+print(S)
